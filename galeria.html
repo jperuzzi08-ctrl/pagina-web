@@ -8,7 +8,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="style.css">
   <script src="javascript.js"></script>
-  <script src="musica.js"></script>
 </head>
 <body>
   <div class="page container-xl px-2 px-md-3">
@@ -16,29 +15,46 @@
       <div class="header-top"><div class="brand"><div><h1>Mi pagina Web</h1><div class="tagline">• I use Artix, btw •</div></div><img class="small" src="assets/gifs/kelvin.gif" alt="kelvin"></div><div class="header-gifs"><div class="small"><span class="blink">ONLINE</span></div></div></div>
       <nav class="site-nav" aria-label="navegacion"><ul><li><a href="index.html">home</a></li><li><a href="intereses.html">intereses</a></li><li><a href="musica.html">musica</a></li><li><a href="linux.html">linux</a></li><li><a href="galeria.html">galeria</a></li><li><a href="xkcd.html" id="xkcdNavLink">xkcd</a></li></ul></nav>
     </header>
+
     <main class="layout row g-3">
       <div class="col-12 col-lg-8">
         <section class="card">
-          <h2>Musica</h2>
-          <div id="albumGrid" class="album-grid" aria-label="Artistas"></div>
-          <div class="player">
-            <div class="now">
-              <img id="nowCover" class="now-cover" alt="Portada del artista seleccionado">
-              <div>
-                <div id="nowAlbum" class="now-album">Selecciona un artista</div>
-                <div id="nowTrack" class="now-track"></div>
+          <h2>Carrusel</h2>
+          <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner rounded-3 overflow-hidden">
+              <div class="carousel-item active">
+                <img src="assets/gallery/foto1.jpg" class="d-block w-100" alt="foto 1" style="height:300px;object-fit:cover;" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',style:'height:300px;',textContent:'assets/gallery/foto1.jpg'}))">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/gallery/foto2.jpg" class="d-block w-100" alt="foto 2" style="height:300px;object-fit:cover;" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',style:'height:300px;',textContent:'assets/gallery/foto2.jpg'}))">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/gallery/foto3.jpg" class="d-block w-100" alt="foto 3" style="height:300px;object-fit:cover;" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',style:'height:300px;',textContent:'assets/gallery/foto3.jpg'}))">
               </div>
             </div>
-            <audio id="audio" controls preload="metadata" style="width:100%"></audio>
-            <ol id="trackList" class="tracklist" aria-label="Lista de canciones"></ol>
+            <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+          </div>
+        </section>
+        <section class="card">
+          <h2>Fotos</h2>
+          <div class="gallery">
+            <figure><img src="assets/gallery/foto1.jpg" alt="foto 1" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',textContent:'assets/gallery/foto1.jpg'}))"></figure>
+            <figure><img src="assets/gallery/foto2.jpg" alt="foto 2" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',textContent:'assets/gallery/foto2.jpg'}))"></figure>
+            <figure><img src="assets/gallery/foto3.jpg" alt="foto 3" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',textContent:'assets/gallery/foto3.jpg'}))"></figure>
+            <figure><img src="assets/gallery/foto4.jpg" alt="foto 4" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',textContent:'assets/gallery/foto4.jpg'}))"></figure>
+            <figure><img src="assets/gallery/foto5.jpg" alt="foto 5" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',textContent:'assets/gallery/foto5.jpg'}))"></figure>
+            <figure><img src="assets/gallery/foto6.jpg" alt="foto 6" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',textContent:'assets/gallery/foto6.jpg'}))"></figure>
           </div>
         </section>
       </div>
+
       <aside class="col-12 col-lg-4">
         <section class="card"><div class="small"><div class="strip"><img class="gif big" src="assets/gifs/niko.gif" alt="niko"><img class="gif big" src="assets/gifs/tux2.gif" alt="tux2"><img class="gif big" src="assets/gifs/v1.gif" alt="v1"></div></div></section>
         <section class="card"><h2>Menu de navegacion</h2><div class="button-wall"><a href="linux.html"><img src="assets/gifs/tux.gif" alt="tux"></a><a href="musica.html"><img src="assets/gifs/player.gif" alt="player"></a><a href="galeria.html"><img src="assets/gifs/camera.gif" alt="camera"></a></div></section>
       </aside>
     </main>
+
     <footer class="site-footer">
       <marquee>Gracias por visitar mi pagina</marquee>
       <div class="footer-bar"><div class="footer-left"><strong>Contactos:</strong><a href="mailto:jperuzzi08@sanjoserosario.com.ar">Email</a><a href="https://github.com/jperuzzi" target="_blank" rel="noopener">GitHub</a></div><form id="contactForm" class="footer-form row g-2" action="https://formspree.io/f/mykrnbjl" method="POST" novalidate><div class="field col-12 col-md-4"><input type="text" name="name" placeholder="Nombre" autocomplete="name" required><span class="field-error" data-error-for="name"></span></div><div class="field col-12 col-md-4"><input type="email" name="email" placeholder="Email" autocomplete="email" required><span class="field-error" data-error-for="email"></span></div><div class="field field-msg col-12 col-md-4"><input type="text" name="message" placeholder="Mensaje (corto)" maxlength="280" required><span class="field-error" data-error-for="message"></span><span class="char-count"></span></div><input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"><div class="col-12 d-flex flex-wrap gap-2 align-items-center"><button type="submit">Enviar</button><p id="formStatus" class="small form-status" style="display:none;"></p></div></form></div>

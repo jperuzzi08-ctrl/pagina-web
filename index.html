@@ -4,49 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mi pagina web</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="style.css">
   <script src="javascript.js"></script>
 </head>
-
 <body>
-  <div class="page">
+  <div class="page container-xl px-2 px-md-3">
     <header class="site-header">
       <div class="header-top">
         <div class="brand">
           <div>
             <h1>Mi pagina Web</h1>
-            <div class="tagline">• I use Artix, btw • </div>
+            <div class="tagline">• I use Artix, btw •</div>
           </div>
-          <img class="small" src="assets/gifs/kelvin.gif" alt="kelvin">
+          <img class="small" src="assets/gifs/kelvin.gif" alt="kelvin" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',textContent:'assets/gifs/kelvin.gif'}))">
         </div>
-        <div class="header-gifs">
-          <div class="small"><span class="blink">ONLINE</span></div>
-        </div>
+        <div class="header-gifs"><div class="small"><span class="blink">ONLINE</span></div></div>
+        <button id="toggleStyleBtn" type="button" class="btn btn-sm btn-outline-light">Desactivar transparencia y bordes redondeados</button>
       </div>
-
       <nav class="site-nav" aria-label="navegacion">
         <ul>
           <li><a href="index.html">home</a></li>
-          <li><a href="fat.html">intereses</a></li>
+          <li><a href="intereses.html">intereses</a></li>
           <li><a href="musica.html">musica</a></li>
           <li><a href="linux.html">linux</a></li>
-          <li><a href="galería.html">galería</a></li>
-          <li><a href="pokemon.html" id="pokeNavLink">pokémon</a></li>
-          <li><a href="chat.html">chat</a></li>
+          <li><a href="galeria.html">galeria</a></li>
+          <li><a href="xkcd.html" id="xkcdNavLink">xkcd</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="layout">
-      <div>
+    <main class="layout row g-3">
+      <div class="col-12 col-lg-8">
         <section class="card">
           <h2>Sobre este sitio</h2>
           <div class="grid-1">
             <article>
-              <p>
-                Este sitio esta inspirado en las paginas personales antiguas de internet/Neocities.
-                Aqui encontraras informacion sobre mi y un Reproductor de musica.
-              </p>
+              <p>Este sitio esta inspirado en las paginas personales antiguas de internet/Neocities. Aqui encontraras informacion sobre mi y un Reproductor de musica.</p>
             </article>
           </div>
         </section>
@@ -55,52 +50,43 @@
           <h2>Biografia avanzada de desarrollador</h2>
           <div class="grid-2">
             <article>
-              <p>
-                Construyo paginas web.
-                Hago proyectos con arduino, como Agrocconect.
-              </p>
-              <p class="small">
-                Tecnologias: HTML5, CSS, JavaScript basico, python basico, Vibe-coder :(, Git/GitHub, y entornos de trabajo basados en Linux.
-              </p>
+              <p>Construyo paginas web. Hago proyectos con arduino, como Agrocconect.</p>
+              <p class="small">Tecnologias: HTML5, CSS, JavaScript basico, python basico, Vibe-coder :(, Git/GitHub, y entornos de trabajo basados en Linux.</p>
             </article>
-
             <article>
               <p>Logros y experiencia:</p>
               <ul class="small">
                 <li>Instalar Arch Linux de la manera complicada (sin archinstall)</li>
-                <li>Experiencia creando paginas web identadas con diseño accesible y sencillas para el usuario promedio.</li>
+                <li>Experiencia creando paginas web identadas con diseno accesible y sencillas para el usuario promedio.</li>
               </ul>
-              <p class="small">
-                Objetivos: estudiar en la UTN Ingeniería en sistemas y convertirme en un desarrollador de videojuegos.
-              </p>
+              <p class="small">Objetivos: estudiar en la UTN Ingenieria en sistemas y convertirme en un desarrollador de videojuegos.</p>
             </article>
           </div>
         </section>
+
       </div>
 
-      <aside>
+      <aside class="col-12 col-lg-4">
         <section class="card">
           <div class="small">
             <div class="strip" aria-label="Quick link icons">
-              <img class="gif big" src="assets/gifs/niko.gif" alt="niko">
-              <img class="gif big" src="assets/gifs/tux2.gif" alt="tux2">
-              <img class="gif big" src="assets/gifs/v1.gif" alt="v1">
+              <img class="gif big" src="assets/gifs/niko.gif" alt="niko" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset gif big',textContent:'niko.gif'}))">
+              <img class="gif big" src="assets/gifs/tux2.gif" alt="tux2" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset gif big',textContent:'tux2.gif'}))">
+              <img class="gif big" src="assets/gifs/v1.gif" alt="v1" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset gif big',textContent:'v1.gif'}))">
             </div>
           </div>
         </section>
 
-        <!-- Pokémon del día -->
-        <section class="card" id="pokeCard">
-          <h2>Pokémon del día</h2>
-          <a id="pokeLink" href="#" style="text-decoration:none; display:block;">
-            <div class="poke-card">
-              <div class="poke-placeholder" id="pokePlaceholder">?</div>
-              <img id="pokeImg" src="" alt="" style="display:none;">
-              <div class="poke-info">
-                <span class="poke-label">pokémon del día</span>
-                <span class="poke-name" id="pokeName">···</span>
-                <span class="poke-id" id="pokeId"></span>
-                <span class="poke-hint">ver más info →</span>
+        <section class="card" id="xkcdCard">
+          <h2>XKCD del dia</h2>
+          <a id="xkcdLink" href="#" style="text-decoration:none;display:block;">
+            <div class="xkcd-card">
+              <div class="xkcd-thumb" id="xkcdThumb">?</div>
+              <div class="xkcd-info">
+                <span class="xkcd-label">comic del dia</span>
+                <span class="xkcd-name" id="xkcdTitle">Cargando...</span>
+                <span class="xkcd-id" id="xkcdId"></span>
+                <span class="xkcd-hint">ver comic completo</span>
               </div>
             </div>
           </a>
@@ -109,17 +95,16 @@
         <section class="card">
           <h2>Menu de navegacion</h2>
           <div class="button-wall">
-            <a href="linux.html"><img src="assets/gifs/tux.gif" alt="tux"></a>
-            <a href="musica.html"><img src="assets/gifs/player.gif" alt="player"></a>
-            <a href="galería.html"><img src="assets/gifs/camera.gif" alt="camera"></a>
-            <a href="fat.html"><img src="assets/gifs/fat.gif" alt="morsa"></a>
+            <a href="linux.html"><img src="assets/gifs/tux.gif" alt="tux" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',textContent:'tux.gif'}))"></a>
+            <a href="musica.html"><img src="assets/gifs/player.gif" alt="player" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',textContent:'player.gif'}))"></a>
+            <a href="galeria.html"><img src="assets/gifs/camera.gif" alt="camera" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'asset',textContent:'camera.gif'}))"></a>
           </div>
         </section>
       </aside>
     </main>
 
     <footer class="site-footer">
-      <marquee>🔥 Gracias por visitar mi pagina 🔥</marquee>
+      <marquee>Gracias por visitar mi pagina</marquee>
       <div class="footer-bar">
         <div class="footer-left">
           <strong>Contactos:</strong>
@@ -127,66 +112,29 @@
           <a href="https://github.com/jperuzzi" target="_blank" rel="noopener">GitHub</a>
         </div>
 
-        <form id="contactForm" class="footer-form" action="https://formspree.io/f/mykrnbjl" method="POST" novalidate>
-          <div class="field">
+        <form id="contactForm" class="footer-form row g-2" action="https://formspree.io/f/mykrnbjl" method="POST" novalidate>
+          <div class="field col-12 col-md-4">
             <input type="text" name="name" placeholder="Nombre" autocomplete="name" required>
             <span class="field-error" data-error-for="name"></span>
           </div>
-          <div class="field">
+          <div class="field col-12 col-md-4">
             <input type="email" name="email" placeholder="Email" autocomplete="email" required>
             <span class="field-error" data-error-for="email"></span>
           </div>
-          <div class="field field-msg">
+          <div class="field field-msg col-12 col-md-4">
             <input type="text" name="message" placeholder="Mensaje (corto)" maxlength="280" required>
             <span class="field-error" data-error-for="message"></span>
             <span class="char-count"></span>
           </div>
-          <!-- Campo oculto anti-spam (honeypot de Formspree) -->
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <button type="submit">Enviar</button>
-          <p id="formStatus" class="small form-status" style="display:none;"></p>
+          <div class="col-12 d-flex flex-wrap gap-2 align-items-center">
+            <button type="submit">Enviar</button>
+            <p id="formStatus" class="small form-status" style="display:none;"></p>
+          </div>
         </form>
       </div>
     </footer>
   </div>
-
-  <script>
-    // Pokémon del día: el mismo durante todo el día (lo maneja pokemon-dia.js con localStorage)
-    const randomId = getPokeDelDia();
-
-    // Apuntamos todos los links con el ID del Pokémon del día
-    document.getElementById("pokeLink").href    = `pokemon.html?id=${randomId}`;
-    document.getElementById("pokemonBtn").href  = `pokemon.html?id=${randomId}`;
-    document.getElementById("pokeNavLink").href = `pokemon.html?id=${randomId}`;
-
-    fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
-      .then(r => r.json())
-      .then(data => {
-        const placeholder = document.getElementById("pokePlaceholder");
-        const img         = document.getElementById("pokeImg");
-        const nameEl      = document.getElementById("pokeName");
-        const idEl        = document.getElementById("pokeId");
-
-        nameEl.textContent = data.name;
-        idEl.textContent   = "#" + String(data.id).padStart(4, "0");
-
-        const sprite = data.sprites?.other?.["official-artwork"]?.front_default
-                    || data.sprites?.front_default;
-
-        if (sprite) {
-          img.src     = sprite;
-          img.alt     = data.name;
-          img.onload  = () => {
-            placeholder.style.display = "none";
-            img.style.display         = "block";
-          };
-        } else {
-          placeholder.textContent = "?";
-        }
-      })
-      .catch(() => {
-        document.getElementById("pokeName").textContent = "???";
-      });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
