@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi pagina web</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="javascript.js"></script>
+</head>
+
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="header-top">
+        <div class="brand">
+          <div>
+            <h1>Mi pagina Web</h1>
+            <div class="tagline">• I use Artix, btw • </div>
+          </div>
+          <img class="small" src="assets/gifs/kelvin.gif" alt="kelvin">
+        </div>
+        <div class="header-gifs">
+          <div class="small"><span class="blink">ONLINE</span></div>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="navegacion">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="fat.html">intereses</a></li>
+          <li><a href="musica.html">musica</a></li>
+          <li><a href="linux.html">linux</a></li>
+          <li><a href="galería.html">galería</a></li>
+          <li><a href="pokemon.html" id="pokeNavLink">pokémon</a></li>
+          <li><a href="chat.html">chat</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <div>
+        <section class="card">
+          <h2>Sobre este sitio</h2>
+          <div class="grid-1">
+            <article>
+              <p>
+                Este sitio esta inspirado en las paginas personales antiguas de internet/Neocities.
+                Aqui encontraras informacion sobre mi y un Reproductor de musica.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Biografia avanzada de desarrollador</h2>
+          <div class="grid-2">
+            <article>
+              <p>
+                Construyo paginas web.
+                Hago proyectos con arduino, como Agrocconect.
+              </p>
+              <p class="small">
+                Tecnologias: HTML5, CSS, JavaScript basico, python basico, Vibe-coder :(, Git/GitHub, y entornos de trabajo basados en Linux.
+              </p>
+            </article>
+
+            <article>
+              <p>Logros y experiencia:</p>
+              <ul class="small">
+                <li>Instalar Arch Linux de la manera complicada (sin archinstall)</li>
+                <li>Experiencia creando paginas web identadas con diseño accesible y sencillas para el usuario promedio.</li>
+              </ul>
+              <p class="small">
+                Objetivos: estudiar en la UTN Ingeniería en sistemas y convertirme en un desarrollador de videojuegos.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <section class="card">
+          <div class="small">
+            <div class="strip" aria-label="Quick link icons">
+              <img class="gif big" src="assets/gifs/niko.gif" alt="niko">
+              <img class="gif big" src="assets/gifs/tux2.gif" alt="tux2">
+              <img class="gif big" src="assets/gifs/v1.gif" alt="v1">
+            </div>
+          </div>
+        </section>
+
+        <!-- Pokémon del día -->
+        <section class="card" id="pokeCard">
+          <h2>Pokémon del día</h2>
+          <a id="pokeLink" href="#" style="text-decoration:none; display:block;">
+            <div class="poke-card">
+              <div class="poke-placeholder" id="pokePlaceholder">?</div>
+              <img id="pokeImg" src="" alt="" style="display:none;">
+              <div class="poke-info">
+                <span class="poke-label">pokémon del día</span>
+                <span class="poke-name" id="pokeName">···</span>
+                <span class="poke-id" id="pokeId"></span>
+                <span class="poke-hint">ver más info →</span>
+              </div>
+            </div>
+          </a>
+        </section>
+
+        <section class="card">
+          <h2>Menu de navegacion</h2>
+          <div class="button-wall">
+            <a href="linux.html"><img src="assets/gifs/tux.gif" alt="tux"></a>
+            <a href="musica.html"><img src="assets/gifs/player.gif" alt="player"></a>
+            <a href="galería.html"><img src="assets/gifs/camera.gif" alt="camera"></a>
+            <a href="fat.html"><img src="assets/gifs/fat.gif" alt="morsa"></a>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <marquee>🔥 Gracias por visitar mi pagina 🔥</marquee>
+      <div class="footer-bar">
+        <div class="footer-left">
+          <strong>Contactos:</strong>
+          <a href="mailto:jperuzzi08@sanjoserosario.com.ar">Email</a>
+          <a href="https://github.com/jperuzzi" target="_blank" rel="noopener">GitHub</a>
+        </div>
+
+        <form id="contactForm" class="footer-form" action="https://formspree.io/f/mykrnbjl" method="POST" novalidate>
+          <div class="field">
+            <input type="text" name="name" placeholder="Nombre" autocomplete="name" required>
+            <span class="field-error" data-error-for="name"></span>
+          </div>
+          <div class="field">
+            <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+            <span class="field-error" data-error-for="email"></span>
+          </div>
+          <div class="field field-msg">
+            <input type="text" name="message" placeholder="Mensaje (corto)" maxlength="280" required>
+            <span class="field-error" data-error-for="message"></span>
+            <span class="char-count"></span>
+          </div>
+          <!-- Campo oculto anti-spam (honeypot de Formspree) -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <button type="submit">Enviar</button>
+          <p id="formStatus" class="small form-status" style="display:none;"></p>
+        </form>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Pokémon del día: el mismo durante todo el día (lo maneja pokemon-dia.js con localStorage)
+    const randomId = getPokeDelDia();
+
+    // Apuntamos todos los links con el ID del Pokémon del día
+    document.getElementById("pokeLink").href    = `pokemon.html?id=${randomId}`;
+    document.getElementById("pokemonBtn").href  = `pokemon.html?id=${randomId}`;
+    document.getElementById("pokeNavLink").href = `pokemon.html?id=${randomId}`;
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
+      .then(r => r.json())
+      .then(data => {
+        const placeholder = document.getElementById("pokePlaceholder");
+        const img         = document.getElementById("pokeImg");
+        const nameEl      = document.getElementById("pokeName");
+        const idEl        = document.getElementById("pokeId");
+
+        nameEl.textContent = data.name;
+        idEl.textContent   = "#" + String(data.id).padStart(4, "0");
+
+        const sprite = data.sprites?.other?.["official-artwork"]?.front_default
+                    || data.sprites?.front_default;
+
+        if (sprite) {
+          img.src     = sprite;
+          img.alt     = data.name;
+          img.onload  = () => {
+            placeholder.style.display = "none";
+            img.style.display         = "block";
+          };
+        } else {
+          placeholder.textContent = "?";
+        }
+      })
+      .catch(() => {
+        document.getElementById("pokeName").textContent = "???";
+      });
+  </script>
+</body>
+</html>

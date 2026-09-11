@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi pagina web</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="javascript.js"></script>
+</head>
+
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="header-top">
+        <div class="brand">
+          <div>
+            <h1>Mi pagina Web</h1>
+            <div class="tagline">• I use Artix, btw • </div>
+          </div>
+          <img class="small" src="assets/gifs/kelvin.gif" alt="kelvin">
+        </div>
+        <div class="header-gifs">
+          <div class="small"><span class="blink">ONLINE</span></div>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="navegacion">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="fat.html">intereses</a></li>
+          <li><a href="musica.html">musica</a></li>
+          <li><a href="linux.html">linux</a></li>
+          <li><a href="galería.html">galería</a></li>
+          <li><a href="pokemon.html">pokémon</a></li>
+          <li><a href="chat.html">chat</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <div>
+        <section class="card">
+          <h2>Fotos</h2>
+
+          <section class="gallery" aria-label="Cat photo gallery">
+            <figure>
+              <a href="assets/galeria/cat1.jpg"><img src="assets/galeria/cat1.jpg" alt="Cat photo 1"></a>
+            </figure>
+
+            <figure>
+              <a href="assets/galeria/cat2.jpg"><img src="assets/galeria/cat2.jpg" alt="Cat photo 2"></a>
+            </figure>
+
+            <figure>
+              <a href="assets/galeria/cat3.jpg"><img src="assets/galeria/cat3.jpg" alt="Cat photo 3"></a>
+            </figure>
+
+            <figure>
+              <a href="assets/galeria/cat4.jpg"><img src="assets/galeria/cat4.jpg" alt="Cat photo 4"></a>
+            </figure>
+
+            <figure>
+              <a href="assets/galeria/cat5.jpg"><img src="assets/galeria/cat5.jpg" alt="Cat photo 5"></a>
+            </figure>
+
+            <figure>
+              <a href="assets/galeria/epstein.png"><img src="assets/galeria/epstein.png" alt="epstein"></a>
+            </figure>
+          </section>
+        </section>
+      </div>
+
+      <aside>
+        <section class="card">
+          <div class="small">
+            <div class="strip" aria-label="Quick link icons">
+              <img class="gif big" src="assets/gifs/niko.gif" alt="niko">
+              <img class="gif big" src="assets/gifs/tux2.gif" alt="tux2">
+              <img class="gif big" src="assets/gifs/v1.gif" alt="v1">
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Menu de navegacion</h2>
+          <div class="button-wall">
+            <a href="linux.html"><img src="assets/gifs/tux.gif" alt="tux"></a>
+            <a href="musica.html"><img src="assets/gifs/player.gif" alt="player"></a>
+            <a href="galería.html"><img src="assets/gifs/camera.gif" alt="camera"></a>
+            <a href="fat.html"><img src="assets/gifs/fat.gif" alt="morsa"></a>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <marquee>🔥 Gracias por visitar mi pagina 🔥</marquee>
+      <div class="footer-bar">
+        <div class="footer-left">
+          <strong>Contactos:</strong>
+          <a href="mailto:jperuzzi08@sanjoserosario.com.ar">Email</a>
+          <a href="https://github.com/jperuzzi" target="_blank" rel="noopener">GitHub</a>
+        </div>
+
+        <form id="contactForm" class="footer-form" action="https://formspree.io/f/mykrnbjl" method="POST" novalidate>
+          <div class="field">
+            <input type="text" name="name" placeholder="Nombre" autocomplete="name" required>
+            <span class="field-error" data-error-for="name"></span>
+          </div>
+          <div class="field">
+            <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+            <span class="field-error" data-error-for="email"></span>
+          </div>
+          <div class="field field-msg">
+            <input type="text" name="message" placeholder="Mensaje (corto)" maxlength="280" required>
+            <span class="field-error" data-error-for="message"></span>
+            <span class="char-count"></span>
+          </div>
+          <!-- Campo oculto anti-spam (honeypot de Formspree) -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <button type="submit">Enviar</button>
+          <p id="formStatus" class="small form-status" style="display:none;"></p>
+        </form>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
